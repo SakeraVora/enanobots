@@ -1,0 +1,19 @@
+<h3 data-bind="html: mainPopupTitle"></h3>
+<hr />
+<!-- ko if: !isSessionTimedOut() -->
+    <span class="timer" data-bind="text: formatTimeLeft()"></span>
+<!-- /ko -->
+
+<!-- ko if: isSessionTimedOut() -->
+    <div class="login-btn-container">
+        <button data-bind="click: loginClick" class="login-button">
+            <span data-bind="text: getButtonTitle()"></span>
+        </button>
+    </div>
+<!-- /ko -->
+
+<!-- ko if: !isSessionTimedOut() -->
+<div>
+    <span data-bind="i18n: 'Click anywhere to continue or hit ESC key to close this popup to continue shopping'"></span>
+</div>
+<!-- /ko -->
